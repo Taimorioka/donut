@@ -53,7 +53,8 @@ def draw():
             intensity = max(0.0, dot_product)
             color_value = int(255 * (ambient_light + intensity * (1 - ambient_light)))
             # color = (color_value, 0, 255 - color_value)
-            color = (random.randint(0,225),0,0)
+            # color = (color_value * random.uniform(0, 1), 0, 255 - color_value)
+            color = (max(200 - color_value, 0), 90,  max(color_value - 90, 0))
 
             y_rotated = y * math.cos(angle_x) - z * math.sin(angle_x)
             z_rotated = y * math.sin(angle_x) + z * math.cos(angle_x)
